@@ -109,6 +109,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Image from flaticon https://www.flaticon.com/authors/smalllikeart',
                 textAlign: TextAlign.center,
               ),
+              RaisedButton(
+                child: Text('Layout Experiment'),
+                color: Colors.amber,
+                textColor: Colors.black,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MySecondPage()),
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -118,6 +129,51 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class MySecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Experiment Layout"),
+        backgroundColor: Colors.teal,
+      ),
+      backgroundColor: Colors.teal,
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              color: Colors.red,
+              width: 100,
+              height: double.infinity,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  color: Colors.yellow,
+                  width: 100,
+                  height: 100,
+                ),
+                Container(
+                  color: Colors.green,
+                  width: 100,
+                  height: 100,
+                ),
+              ],
+            ),
+            Container(
+              color: Colors.blue,
+              width: 100,
+              height: double.infinity,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
